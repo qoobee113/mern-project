@@ -18,8 +18,10 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology : true,
     useCreateIndex : true
-}, () =>{
-    console.log('✅ Connected database from mongodb');
+}).then( () =>{
+  console.log('✅ Connected Mongo success!');
+}).catch((err) =>{
+  console.log(String.fromCodePoint(0x1F621) + ' Connect Mongo Fail!');
 });
 
 //Middle ware
