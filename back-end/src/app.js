@@ -9,6 +9,7 @@ const userRoutes = require('./routes/auth/user');
 const adminRoutes = require('./routes/auth/admin');
 const categoryRoute = require('./routes/category/category');
 const productRoutes = require('./routes/product/product');
+const cartRoutes = require('./routes/cart/cart');
 
 //connect database mongo
 mongoose.connect(
@@ -34,6 +35,7 @@ app.use('/api/user',userRoutes);
 app.use('/api/admin',adminRoutes);
 app.use('/api/category',categoryRoute);
 app.use('/api/product',productRoutes);
+app.use('/api/cart',cartRoutes)
 
 app.get('/', (req, res, next) => {
     return res.status(200).json({
